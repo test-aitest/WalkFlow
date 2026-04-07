@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WalkFlow - Project Introduction Deck</title>
+<style>
+  @page { size: landscape; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; background: #0a0a0a; color: #fff; }
+
+  .slide {
+    width: 1280px; height: 720px;
+    padding: 60px 80px;
+    page-break-after: always;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .slide:last-child { page-break-after: avoid; }
+
+  /* Slide 1: Title */
+  .slide-title { background: linear-gradient(135deg, #1a1a2e 0%, #0a0a1a 100%); text-align: center; align-items: center; }
+  .slide-title h1 { font-size: 96px; font-weight: 800; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; }
+  .slide-title .subtitle { font-size: 32px; color: #aaa; margin-bottom: 48px; }
+  .slide-title .tagline { font-size: 20px; color: #666; }
+  .airpods-icon { font-size: 120px; margin-bottom: 32px; }
+
+  /* Slide 2: Problem */
+  .slide-problem { background: linear-gradient(135deg, #1a0a0a 0%, #0a0a0a 100%); }
+  .slide-problem h2 { font-size: 48px; color: #ff6b6b; margin-bottom: 48px; }
+  .problem-list { list-style: none; font-size: 28px; line-height: 2.2; }
+  .problem-list li::before { content: "✕ "; color: #ff6b6b; font-weight: bold; }
+
+  /* Slide 3: Solution */
+  .slide-solution { background: linear-gradient(135deg, #0a1a0a 0%, #0a0a0a 100%); }
+  .slide-solution h2 { font-size: 48px; color: #51cf66; margin-bottom: 48px; }
+  .solution-flow { display: flex; align-items: center; gap: 24px; font-size: 22px; margin-top: 32px; }
+  .flow-step { background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 16px; padding: 24px; text-align: center; flex: 1; }
+  .flow-step .icon { font-size: 48px; margin-bottom: 12px; }
+  .flow-arrow { font-size: 32px; color: #51cf66; }
+
+  /* Slide 4: Gestures */
+  .slide-gestures { background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 100%); }
+  .slide-gestures h2 { font-size: 48px; color: #667eea; margin-bottom: 48px; }
+  .gesture-grid { display: flex; gap: 40px; }
+  .gesture-card { flex: 1; background: rgba(102, 126, 234, 0.08); border: 1px solid rgba(102, 126, 234, 0.2); border-radius: 20px; padding: 40px; text-align: center; }
+  .gesture-card .emoji { font-size: 64px; margin-bottom: 16px; }
+  .gesture-card .name { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .gesture-card .desc { font-size: 18px; color: #aaa; }
+
+  /* Slide 5: Architecture */
+  .slide-arch { background: linear-gradient(135deg, #0a0a1a 0%, #0a1a1a 100%); }
+  .slide-arch h2 { font-size: 48px; color: #4ecdc4; margin-bottom: 40px; }
+  .arch-diagram { font-family: 'SF Mono', monospace; font-size: 18px; line-height: 1.8; background: rgba(78, 205, 196, 0.05); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 16px; padding: 32px; white-space: pre; }
+
+  /* Slide 6: Tech Stack */
+  .slide-tech { background: linear-gradient(135deg, #1a0a1a 0%, #0a0a0a 100%); }
+  .slide-tech h2 { font-size: 48px; color: #e599f7; margin-bottom: 40px; }
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tech-item { background: rgba(229, 153, 247, 0.06); border: 1px solid rgba(229, 153, 247, 0.15); border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+  .tech-item .label { font-size: 20px; font-weight: 600; }
+  .tech-item .detail { font-size: 16px; color: #aaa; }
+
+  /* Slide 7: State Machine */
+  .slide-state { background: linear-gradient(135deg, #0a0a0a 0%, #0a1a0a 100%); }
+  .slide-state h2 { font-size: 48px; color: #ffd43b; margin-bottom: 40px; }
+  .state-flow { font-family: 'SF Mono', monospace; font-size: 17px; line-height: 2; background: rgba(255, 212, 59, 0.05); border: 1px solid rgba(255, 212, 59, 0.2); border-radius: 16px; padding: 32px; white-space: pre; }
+
+  /* Slide 8: Phase 2 */
+  .slide-phase2 { background: linear-gradient(135deg, #1a1a0a 0%, #0a0a0a 100%); }
+  .slide-phase2 h2 { font-size: 48px; color: #ffa94d; margin-bottom: 48px; }
+  .phase2-features { list-style: none; font-size: 26px; line-height: 2.4; }
+  .phase2-features li::before { content: "◎ "; color: #ffa94d; }
+
+  /* Slide 9: Closing */
+  .slide-closing { background: linear-gradient(135deg, #1a1a2e 0%, #0a0a1a 100%); text-align: center; align-items: center; }
+  .slide-closing h2 { font-size: 64px; font-weight: 800; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 32px; }
+  .slide-closing .closing-text { font-size: 28px; color: #aaa; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<div class="slide slide-title">
+  <div class="airpods-icon">🎧</div>
+  <h1>WalkFlow</h1>
+  <p class="subtitle">歩きながら、AIでタスクを完了させる</p>
+  <p class="tagline">AirPods × OpenClaw × ハンズフリー</p>
+</div>
+
+<!-- Slide 2: Problem -->
+<div class="slide slide-problem">
+  <h2>課題</h2>
+  <ul class="problem-list">
+    <li>移動中にメールやSlackの返信ができない</li>
+    <li>スマホを操作するには立ち止まる必要がある</li>
+    <li>AIに指示しても、最終確認にはスマホ操作が必要</li>
+    <li>複雑なタスクフローを歩きながら進められない</li>
+  </ul>
+</div>
+
+<!-- Slide 3: Solution -->
+<div class="slide slide-solution">
+  <h2>WalkFlowの解決策</h2>
+  <div class="solution-flow">
+    <div class="flow-step">
+      <div class="icon">🗣️</div>
+      <div>音声でタスク指示</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="icon">🤖</div>
+      <div>AIがプラン提案</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="icon">😊</div>
+      <div>うなずいて承認</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="icon">✅</div>
+      <div>タスク完了</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4: Gestures -->
+<div class="slide slide-gestures">
+  <h2>3つのジェスチャーで全操作</h2>
+  <div class="gesture-grid">
+    <div class="gesture-card">
+      <div class="emoji">😊</div>
+      <div class="name">うなずき</div>
+      <div class="desc">AIの提案を承認・実行</div>
+    </div>
+    <div class="gesture-card">
+      <div class="emoji">🙅</div>
+      <div class="name">首振り</div>
+      <div class="desc">却下して音声で修正</div>
+    </div>
+    <div class="gesture-card">
+      <div class="emoji">👆</div>
+      <div class="name">シングルタップ</div>
+      <div class="desc">音声入力の開始/確定</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: Architecture -->
+<div class="slide slide-arch">
+  <h2>システムアーキテクチャ</h2>
+  <div class="arch-diagram">
+┌─────────────────────────────────────────────┐
+│            iOS App (Swift 6 / SwiftUI)       │
+│                                              │
+│   AirPods ──▶ PodStickKit (Nod/Shake/Tap)   │
+│   マイク  ──▶ SpeechRecognizer (日本語)      │
+│   スピーカー◀── AVSpeechSynthesizer (TTS)    │
+│                    │                         │
+│            TaskOrchestrator (状態マシン)       │
+│                    │ WebSocket               │
+└────────────────────┼─────────────────────────┘
+                     │
+┌────────────────────┼─────────────────────────┐
+│        OpenClaw Gateway (Zeabur/Hetzner)      │
+│   Gmail │ Slack │ Notion │ Web │ Calendar     │
+└───────────────────────────────────────────────┘</div>
+</div>
+
+<!-- Slide 6: Tech Stack -->
+<div class="slide slide-tech">
+  <h2>技術スタック</h2>
+  <div class="tech-grid">
+    <div class="tech-item">
+      <div class="label">Swift 6</div>
+      <div class="detail">Strict Concurrency / actor</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">PodStickKit</div>
+      <div class="detail">AirPodsモーション + タップ検出</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">Speech Framework</div>
+      <div class="detail">SFSpeechRecognizer (日本語)</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">OpenClaw</div>
+      <div class="detail">AIエージェント (247K GitHub Stars)</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">WebSocket</div>
+      <div class="detail">URLSessionWebSocketTask</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">Zeabur + Hetzner</div>
+      <div class="detail">K3sクラスター / パブリックWSS</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">51 Unit Tests</div>
+      <div class="detail">テスト駆動開発 / 全パス</div>
+    </div>
+    <div class="tech-item">
+      <div class="label">XcodeGen</div>
+      <div class="detail">YAML定義 / CI対応</div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 7: State Machine -->
+<div class="slide slide-state">
+  <h2>タスク実行フロー</h2>
+  <div class="state-flow">
+  idle ──[タップ]──▶ listening（録音開始）
+             │
+  listening ──[タップ]──▶ sendingToAgent（確定・送信）
+                              │
+              ┌───────────────┘
+              ▼
+  awaitingApproval ──[うなずき]──▶ executing ──▶ taskComplete
+         │
+         └──[首振り]──▶ listeningModification ──[タップ]──▶ sendingToAgent
+  </div>
+</div>
+
+<!-- Slide 8: Phase 2 -->
+<div class="slide slide-phase2">
+  <h2>Phase 2: ソーシャルタスクマップ</h2>
+  <ul class="phase2-features">
+    <li>タスク完了地点をマップにピン表示</li>
+    <li>他ユーザーのタスクフローを閲覧</li>
+    <li>気になるタスク実行者にAskボタンでチャット</li>
+    <li>タスク実行パターンの可視化・共有</li>
+    <li>バックエンド: Zeabur + TiDB Serverless</li>
+  </ul>
+</div>
+
+<!-- Slide 9: Closing -->
+<div class="slide slide-closing">
+  <h2>WalkFlow</h2>
+  <p class="closing-text">歩きながら、世界を動かす。</p>
+</div>
+
+</body>
+</html>

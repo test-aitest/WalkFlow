@@ -82,7 +82,15 @@ actor OpenClawClient {
 
         // Wait for connection to actually establish by doing a ping
         do {
-            try await task.sendPing()
+            try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+                task.sendPing { error in
+                    if let error {
+                        continuation.resume(throwing: error)
+                    } else {
+                        continuation.resume()
+                    }
+                }
+            }
             isConnected = true
             reconnectAttempts = 0
             NSLog("[OpenClaw] Connected successfully")
