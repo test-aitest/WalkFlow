@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03711410DB80F0122C322660 /* ListeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288F31212DD05DB6B796F423 /* ListeningView.swift */; };
+		044EE6D22B117ED506D9DCC3 /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50524A8A3A053E57A446583 /* KeychainServiceTests.swift */; };
+		0AFA23A37F1423C7E2E7503C /* WalkFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB26000611B30E70B462667 /* WalkFlowApp.swift */; };
+		1B419EBFBC9C516334D5DF9B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B49E152DD3D6A441CA77F28 /* OnboardingView.swift */; };
+		1CD6415CFC99B34E4858C55B /* TaskOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E59695A7FB6B84FE78697F /* TaskOrchestratorTests.swift */; };
+		20C6F1F61D8EC243DDD01184 /* SpeechOutputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29FB9F463EF15635F14F3DF /* SpeechOutputService.swift */; };
+		20F80EE1A1DD150FA1DB9F6C /* AudioSessionCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7388DAC2809FD0BB717D3EBE /* AudioSessionCoordinatorTests.swift */; };
+		2727CF0870FE1C790276F389 /* PodStickKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1ED960A94B554EA6C3CFAF2 /* PodStickKit */; };
+		3A36CA1757325F19ABD0C646 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442BAC1F8A73662ACCD63DAE /* KeychainService.swift */; };
+		44D5D7397293E363FBD7926A /* OpenClawMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47017CC6AD4085BE6E7DDC /* OpenClawMessage.swift */; };
+		50E0C8DE5DF2FFD28DF23E31 /* ApprovalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937633FA1D01CEEF2CD85B1 /* ApprovalView.swift */; };
+		516689242F58CCAB9D8A7E6E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D45E60491A553D718C02F0 /* Config.swift */; };
+		566D6F273F932976BD7A8A5F /* OpenClawMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC76E756A352255C9300F563 /* OpenClawMessageTests.swift */; };
+		59E352E7ADC9741163F44479 /* VoiceInputServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9E1ABFCE38AD2E569608F8 /* VoiceInputServiceTests.swift */; };
+		824E0AB12F283B6D814F1FD4 /* TaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746EB71A86254AE6135980C /* TaskState.swift */; };
+		9007491812A636F4AB2D5CE7 /* VoiceInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4FE14E11608C070192BAA5 /* VoiceInputService.swift */; };
+		98AE274BEAC26ECE1CFEBD55 /* OpenClawClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AA5A3AEF4362F88D2307B9 /* OpenClawClientTests.swift */; };
+		B1BFE615AB63DC19795CF4AC /* TaskFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED986855421BEDBBA2093448 /* TaskFlowView.swift */; };
+		C55BE24FB8109E9E906F022B /* SpeechOutputServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DE1780E5C5382E0F2B0AE0 /* SpeechOutputServiceTests.swift */; };
+		C7E22467067CF508EC951A00 /* AudioSessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C908252C59FF764B3B2AC6A /* AudioSessionCoordinator.swift */; };
+		CF78224BEDFE4C9F2524FD97 /* TaskStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE9E38BC5188B26F7F85979 /* TaskStateTests.swift */; };
+		D6C6787CD1976515EFF503BD /* TaskOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043D81C1194CBA987E98D5CD /* TaskOrchestrator.swift */; };
+		E5674F27AAC4F9AD2474314C /* OpenClawClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164EC0A076A53B4182AAB4FC /* OpenClawClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBB1129E2567E7398443D428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E5C05E22C66EAFC89E6E2FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA213E9092908C474E4B5921;
+			remoteInfo = WalkFlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		043D81C1194CBA987E98D5CD /* TaskOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOrchestrator.swift; sourceTree = "<group>"; };
+		0937633FA1D01CEEF2CD85B1 /* ApprovalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovalView.swift; sourceTree = "<group>"; };
+		0B49E152DD3D6A441CA77F28 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		164EC0A076A53B4182AAB4FC /* OpenClawClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClient.swift; sourceTree = "<group>"; };
+		288F31212DD05DB6B796F423 /* ListeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningView.swift; sourceTree = "<group>"; };
+		3C908252C59FF764B3B2AC6A /* AudioSessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionCoordinator.swift; sourceTree = "<group>"; };
+		442BAC1F8A73662ACCD63DAE /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		4746EB71A86254AE6135980C /* TaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskState.swift; sourceTree = "<group>"; };
+		4B47017CC6AD4085BE6E7DDC /* OpenClawMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawMessage.swift; sourceTree = "<group>"; };
+		5E20CBD9D9289FFED50D1DE3 /* WalkFlowTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WalkFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60DE1780E5C5382E0F2B0AE0 /* SpeechOutputServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechOutputServiceTests.swift; sourceTree = "<group>"; };
+		62E59695A7FB6B84FE78697F /* TaskOrchestratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOrchestratorTests.swift; sourceTree = "<group>"; };
+		7388DAC2809FD0BB717D3EBE /* AudioSessionCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionCoordinatorTests.swift; sourceTree = "<group>"; };
+		9EB26000611B30E70B462667 /* WalkFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkFlowApp.swift; sourceTree = "<group>"; };
+		B29FB9F463EF15635F14F3DF /* SpeechOutputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechOutputService.swift; sourceTree = "<group>"; };
+		C4AA5A3AEF4362F88D2307B9 /* OpenClawClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawClientTests.swift; sourceTree = "<group>"; };
+		CA4FE14E11608C070192BAA5 /* VoiceInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputService.swift; sourceTree = "<group>"; };
+		D792E303DD8A18ABB43423FD /* PodStickKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PodStickKit; path = ../PodStickKit; sourceTree = SOURCE_ROOT; };
+		E4D45E60491A553D718C02F0 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E684263EF23609163A8870FA /* WalkFlow.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WalkFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9E1ABFCE38AD2E569608F8 /* VoiceInputServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputServiceTests.swift; sourceTree = "<group>"; };
+		ED986855421BEDBBA2093448 /* TaskFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFlowView.swift; sourceTree = "<group>"; };
+		EFE9E38BC5188B26F7F85979 /* TaskStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStateTests.swift; sourceTree = "<group>"; };
+		F50524A8A3A053E57A446583 /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
+		FC76E756A352255C9300F563 /* OpenClawMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawMessageTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0A36B4D823D5F8680F429FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2727CF0870FE1C790276F389 /* PodStickKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06A48C5F09CF606CD03CAE7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E684263EF23609163A8870FA /* WalkFlow.app */,
+				5E20CBD9D9289FFED50D1DE3 /* WalkFlowTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32302E96AB6A5C180588B23A /* WalkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				6610364DDF284D5316C24F19 /* App */,
+				BFB7D85827A775FD3AF11B01 /* Models */,
+				A10FDD5FAF80512CD9C62642 /* Services */,
+				F99BE613719DDFF82F5F2EC0 /* ViewModels */,
+				4D613A83231C98094A6E6564 /* Views */,
+			);
+			path = WalkFlow;
+			sourceTree = "<group>";
+		};
+		4D613A83231C98094A6E6564 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0937633FA1D01CEEF2CD85B1 /* ApprovalView.swift */,
+				288F31212DD05DB6B796F423 /* ListeningView.swift */,
+				0B49E152DD3D6A441CA77F28 /* OnboardingView.swift */,
+				ED986855421BEDBBA2093448 /* TaskFlowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6610364DDF284D5316C24F19 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E4D45E60491A553D718C02F0 /* Config.swift */,
+				9EB26000611B30E70B462667 /* WalkFlowApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A10FDD5FAF80512CD9C62642 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3C908252C59FF764B3B2AC6A /* AudioSessionCoordinator.swift */,
+				442BAC1F8A73662ACCD63DAE /* KeychainService.swift */,
+				164EC0A076A53B4182AAB4FC /* OpenClawClient.swift */,
+				B29FB9F463EF15635F14F3DF /* SpeechOutputService.swift */,
+				CA4FE14E11608C070192BAA5 /* VoiceInputService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFB7D85827A775FD3AF11B01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B47017CC6AD4085BE6E7DDC /* OpenClawMessage.swift */,
+				4746EB71A86254AE6135980C /* TaskState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EFA31910674DB8C80314478C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D792E303DD8A18ABB43423FD /* PodStickKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		F15F226DE592C9B119F652F0 = {
+			isa = PBXGroup;
+			children = (
+				EFA31910674DB8C80314478C /* Packages */,
+				32302E96AB6A5C180588B23A /* WalkFlow */,
+				F788A57DDD2087E2E78AD3A0 /* WalkFlowTests */,
+				06A48C5F09CF606CD03CAE7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F788A57DDD2087E2E78AD3A0 /* WalkFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				7388DAC2809FD0BB717D3EBE /* AudioSessionCoordinatorTests.swift */,
+				F50524A8A3A053E57A446583 /* KeychainServiceTests.swift */,
+				C4AA5A3AEF4362F88D2307B9 /* OpenClawClientTests.swift */,
+				FC76E756A352255C9300F563 /* OpenClawMessageTests.swift */,
+				60DE1780E5C5382E0F2B0AE0 /* SpeechOutputServiceTests.swift */,
+				62E59695A7FB6B84FE78697F /* TaskOrchestratorTests.swift */,
+				EFE9E38BC5188B26F7F85979 /* TaskStateTests.swift */,
+				EC9E1ABFCE38AD2E569608F8 /* VoiceInputServiceTests.swift */,
+			);
+			path = WalkFlowTests;
+			sourceTree = "<group>";
+		};
+		F99BE613719DDFF82F5F2EC0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				043D81C1194CBA987E98D5CD /* TaskOrchestrator.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DD40941E54528DB2238E613 /* WalkFlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EABB69F6CA5E2E7ADD403E73 /* Build configuration list for PBXNativeTarget "WalkFlowTests" */;
+			buildPhases = (
+				FC3EDD4698162702F5B80110 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ECDFA1946DF3638C33C69DF5 /* PBXTargetDependency */,
+			);
+			name = WalkFlowTests;
+			packageProductDependencies = (
+			);
+			productName = WalkFlowTests;
+			productReference = 5E20CBD9D9289FFED50D1DE3 /* WalkFlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA213E9092908C474E4B5921 /* WalkFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6195D62513C44D928A21146 /* Build configuration list for PBXNativeTarget "WalkFlow" */;
+			buildPhases = (
+				35AD74220AE5CB9FA46E8DBD /* Sources */,
+				B0A36B4D823D5F8680F429FB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalkFlow;
+			packageProductDependencies = (
+				E1ED960A94B554EA6C3CFAF2 /* PodStickKit */,
+			);
+			productName = WalkFlow;
+			productReference = E684263EF23609163A8870FA /* WalkFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E5C05E22C66EAFC89E6E2FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = E11E22D518468B5FB1853F94 /* Build configuration list for PBXProject "WalkFlow" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F15F226DE592C9B119F652F0;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3FE943B5F3E969CD1C73AE2C /* XCLocalSwiftPackageReference "../PodStickKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 06A48C5F09CF606CD03CAE7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA213E9092908C474E4B5921 /* WalkFlow */,
+				5DD40941E54528DB2238E613 /* WalkFlowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35AD74220AE5CB9FA46E8DBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50E0C8DE5DF2FFD28DF23E31 /* ApprovalView.swift in Sources */,
+				C7E22467067CF508EC951A00 /* AudioSessionCoordinator.swift in Sources */,
+				516689242F58CCAB9D8A7E6E /* Config.swift in Sources */,
+				3A36CA1757325F19ABD0C646 /* KeychainService.swift in Sources */,
+				03711410DB80F0122C322660 /* ListeningView.swift in Sources */,
+				1B419EBFBC9C516334D5DF9B /* OnboardingView.swift in Sources */,
+				E5674F27AAC4F9AD2474314C /* OpenClawClient.swift in Sources */,
+				44D5D7397293E363FBD7926A /* OpenClawMessage.swift in Sources */,
+				20C6F1F61D8EC243DDD01184 /* SpeechOutputService.swift in Sources */,
+				B1BFE615AB63DC19795CF4AC /* TaskFlowView.swift in Sources */,
+				D6C6787CD1976515EFF503BD /* TaskOrchestrator.swift in Sources */,
+				824E0AB12F283B6D814F1FD4 /* TaskState.swift in Sources */,
+				9007491812A636F4AB2D5CE7 /* VoiceInputService.swift in Sources */,
+				0AFA23A37F1423C7E2E7503C /* WalkFlowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3EDD4698162702F5B80110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F80EE1A1DD150FA1DB9F6C /* AudioSessionCoordinatorTests.swift in Sources */,
+				044EE6D22B117ED506D9DCC3 /* KeychainServiceTests.swift in Sources */,
+				98AE274BEAC26ECE1CFEBD55 /* OpenClawClientTests.swift in Sources */,
+				566D6F273F932976BD7A8A5F /* OpenClawMessageTests.swift in Sources */,
+				C55BE24FB8109E9E906F022B /* SpeechOutputServiceTests.swift in Sources */,
+				1CD6415CFC99B34E4858C55B /* TaskOrchestratorTests.swift in Sources */,
+				CF78224BEDFE4C9F2524FD97 /* TaskStateTests.swift in Sources */,
+				59E352E7ADC9741163F44479 /* VoiceInputServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ECDFA1946DF3638C33C69DF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA213E9092908C474E4B5921 /* WalkFlow */;
+			targetProxy = DBB1129E2567E7398443D428 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F4A08A832354BB6C4BB3250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声入力に使用します。";
+				INFOPLIST_KEY_NSMotionUsageDescription = "AirPodsのジェスチャーでタスクを承認・却下します。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "音声でタスクを指示します。";
+				INFOPLIST_KEY_UIBackgroundModes = audio;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkflow.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A3BFD886448B8E525DB82F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7B9984D50C9DDDE480716831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		88F72B024525385137C084AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkflow.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkFlow.app/WalkFlow";
+			};
+			name = Debug;
+		};
+		96F223045118645A5BA59357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声入力に使用します。";
+				INFOPLIST_KEY_NSMotionUsageDescription = "AirPodsのジェスチャーでタスクを承認・却下します。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "音声でタスクを指示します。";
+				INFOPLIST_KEY_UIBackgroundModes = audio;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkflow.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB0039DE09FE0C8B0C22C567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkflow.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkFlow.app/WalkFlow";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E11E22D518468B5FB1853F94 /* Build configuration list for PBXProject "WalkFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A3BFD886448B8E525DB82F8 /* Debug */,
+				7B9984D50C9DDDE480716831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EABB69F6CA5E2E7ADD403E73 /* Build configuration list for PBXNativeTarget "WalkFlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F72B024525385137C084AC /* Debug */,
+				EB0039DE09FE0C8B0C22C567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F6195D62513C44D928A21146 /* Build configuration list for PBXNativeTarget "WalkFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96F223045118645A5BA59357 /* Debug */,
+				1F4A08A832354BB6C4BB3250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3FE943B5F3E969CD1C73AE2C /* XCLocalSwiftPackageReference "../PodStickKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../PodStickKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1ED960A94B554EA6C3CFAF2 /* PodStickKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PodStickKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4E5C05E22C66EAFC89E6E2FB /* Project object */;
+}

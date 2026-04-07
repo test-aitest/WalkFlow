@@ -1,0 +1,46 @@
+name: WalkFlow
+options:
+  bundleIdPrefix: com.walkflow
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    TARGETED_DEVICE_FAMILY: "1"
+
+targets:
+  WalkFlow:
+    type: application
+    platform: iOS
+    sources:
+      - path: WalkFlow
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.walkflow.app
+        GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_KEY_NSMotionUsageDescription: "AirPodsのジェスチャーでタスクを承認・却下します。"
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "音声でタスクを指示します。"
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "音声入力に使用します。"
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_UIBackgroundModes: "audio"
+    dependencies:
+      - package: PodStickKit
+
+  WalkFlowTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: WalkFlowTests
+    dependencies:
+      - target: WalkFlow
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.walkflow.tests
+        GENERATE_INFOPLIST_FILE: true
+
+packages:
+  PodStickKit:
+    path: ../PodStickKit
