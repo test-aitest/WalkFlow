@@ -62,7 +62,7 @@
 		CA4FE14E11608C070192BAA5 /* VoiceInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputService.swift; sourceTree = "<group>"; };
 		D792E303DD8A18ABB43423FD /* PodStickKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PodStickKit; path = ../PodStickKit; sourceTree = SOURCE_ROOT; };
 		E4D45E60491A553D718C02F0 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		E684263EF23609163A8870FA /* WalkFlow.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WalkFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E684263EF23609163A8870FA /* WalkFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9E1ABFCE38AD2E569608F8 /* VoiceInputServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputServiceTests.swift; sourceTree = "<group>"; };
 		ED986855421BEDBBA2093448 /* TaskFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFlowView.swift; sourceTree = "<group>"; };
 		EFE9E38BC5188B26F7F85979 /* TaskStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStateTests.swift; sourceTree = "<group>"; };
@@ -233,8 +233,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 2600;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = E11E22D518468B5FB1853F94 /* Build configuration list for PBXProject "WalkFlow" */;
 			developmentRegion = en;
@@ -312,6 +310,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 63QTCA4K9N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声入力に使用します。";
 				INFOPLIST_KEY_NSMotionUsageDescription = "AirPodsのジェスチャーでタスクを承認・却下します。";
@@ -388,7 +387,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -445,7 +444,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -472,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 63QTCA4K9N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "音声入力に使用します。";
 				INFOPLIST_KEY_NSMotionUsageDescription = "AirPodsのジェスチャーでタスクを承認・却下します。";

@@ -33,10 +33,18 @@ final class VoiceInputService {
             return
         }
 
-        stopListening()
+        // HandsFreeRecipeと同じAudioSession設定
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .measurement,
+                                          options: [.defaultToSpeaker, .allowBluetooth])
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            NSLog("[VoiceInput] AudioSession config failed: \(error)")
+            return
+        }
 
-        AudioSessionCoordinator.switchToVoiceRecognition()
-
+        // HandsFreeRecipeと同じ: 毎回新しいAVAudioEngineを作成
         let engine = AVAudioEngine()
         self.audioEngine = engine
 
@@ -46,16 +54,18 @@ final class VoiceInputService {
 
         let inputNode = engine.inputNode
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+        NSLog("[VoiceInput] Recording format: \(recordingFormat.sampleRate)Hz, \(recordingFormat.channelCount)ch")
 
         guard recordingFormat.sampleRate > 0 else {
-            NSLog("[VoiceInput] Invalid format, retrying...")
+            NSLog("[VoiceInput] Invalid format, retrying with delay...")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.retryStartListening()
             }
             return
         }
 
-        beginRecording(engine: engine, inputNode: inputNode, format: recordingFormat, request: recognitionRequest, recognizer: speechRecognizer)
+        beginRecording(engine: engine, inputNode: inputNode, format: recordingFormat,
+                       request: recognitionRequest, recognizer: speechRecognizer)
     }
 
     private func retryStartListening() {
@@ -70,16 +80,20 @@ final class VoiceInputService {
 
         let inputNode = engine.inputNode
         let format = inputNode.outputFormat(forBus: 0)
+        NSLog("[VoiceInput] Retry format: \(format.sampleRate)Hz, \(format.channelCount)ch")
 
         guard format.sampleRate > 0 else {
-            NSLog("[VoiceInput] Still invalid format")
+            NSLog("[VoiceInput] Still invalid format, giving up")
             return
         }
 
-        beginRecording(engine: engine, inputNode: inputNode, format: format, request: request, recognizer: speechRecognizer)
+        beginRecording(engine: engine, inputNode: inputNode, format: format,
+                       request: request, recognizer: speechRecognizer)
     }
 
-    private func beginRecording(engine: AVAudioEngine, inputNode: AVAudioNode, format: AVAudioFormat, request: SFSpeechAudioBufferRecognitionRequest, recognizer: SFSpeechRecognizer) {
+    private func beginRecording(engine: AVAudioEngine, inputNode: AVAudioNode,
+                                format: AVAudioFormat, request: SFSpeechAudioBufferRecognitionRequest,
+                                recognizer: SFSpeechRecognizer) {
         inputNode.installTap(onBus: 0, bufferSize: 4096, format: format) { buffer, _ in
             request.append(buffer)
         }
@@ -92,6 +106,7 @@ final class VoiceInputService {
             guard let self, let result else { return }
 
             let text = result.bestTranscription.formattedString
+            NSLog("[VoiceInput] Heard: \(text)")
             Task { @MainActor in
                 self.partialTranscription = text
                 self.onPartialTranscription?(text)
@@ -106,13 +121,26 @@ final class VoiceInputService {
             NSLog("[VoiceInput] Listening started")
         } catch {
             NSLog("[VoiceInput] Engine start failed: \(error)")
-            stopListening()
+            cleanupEngine()
         }
     }
 
     func stopListening() {
         let finalText = partialTranscription
 
+        cleanupEngine()
+
+        // HandsFreeRecipeと同じ: 録音終了後にplaybackモードに戻す
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers])
+        try? audioSession.setActive(true)
+
+        if !finalText.isEmpty {
+            onTranscription?(finalText)
+        }
+    }
+
+    private func cleanupEngine() {
         if let engine = audioEngine, engine.isRunning {
             engine.stop()
             engine.inputNode.removeTap(onBus: 0)
@@ -124,11 +152,5 @@ final class VoiceInputService {
         recognitionTask = nil
         isListening = false
         partialTranscription = ""
-
-        AudioSessionCoordinator.switchToPlayback()
-
-        if !finalText.isEmpty {
-            onTranscription?(finalText)
-        }
     }
 }

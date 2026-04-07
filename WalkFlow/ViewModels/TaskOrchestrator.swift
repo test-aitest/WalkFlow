@@ -1,5 +1,7 @@
 import Foundation
 import PodStickKit
+import MediaPlayer
+import UIKit
 
 @MainActor
 @Observable
@@ -27,20 +29,24 @@ final class TaskOrchestrator {
     func teardown() {
         eventTask?.cancel()
         eventTask = nil
-        podStick?.stop()
+        podStick?.motion.stop()
         voiceInput?.stopListening()
         speechOutput?.stop()
+
+        let center = MPRemoteCommandCenter.shared()
+        center.togglePlayPauseCommand.removeTarget(nil)
+        center.playCommand.removeTarget(nil)
+        center.pauseCommand.removeTarget(nil)
+
         Task {
             await openClawClient?.disconnect()
         }
     }
 
     private func setupPodStickKit() {
-        let config = Configuration(
-            tap: TapConfiguration(enableSilentPlayback: false)
-        )
-        let ps = PodStickKit(configuration: config)
+        let ps = PodStickKit()
 
+        // HandsFreeRecipeと同じパターン: 不要なdetectorを除去
         ps.motion.removeGestureDetector(named: "headbang")
         ps.motion.removeGestureDetector(named: "pitchBoost")
 
@@ -56,16 +62,44 @@ final class TaskOrchestrator {
             }
         }
 
-        ps.tap.onSingleTap = { [weak self] in
-            self?.handleSingleTap()
+        // HandsFreeRecipeと同じ: motion.start()のみ（tap.setup()は使わない）
+        // ps.start() は tap.setup() も呼びSilentAudioPlayerがAudioSessionと競合する
+        ps.motion.start()
+
+        self.podStick = ps
+
+        // タップ検出はMPRemoteCommandCenterで直接セットアップ
+        setupRemoteTap()
+    }
+
+    private func setupRemoteTap() {
+        let center = MPRemoteCommandCenter.shared()
+
+        center.togglePlayPauseCommand.isEnabled = true
+        center.togglePlayPauseCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.handleSingleTap()
+            }
+            return .success
         }
 
-        // motion.start()のみ使用してAudioSession競合を回避
-        // tap.setup()はSilentAudioPlayer無しで手動呼出し
-        AudioSessionCoordinator.switchToPlayback()
-        ps.motion.start()
-        ps.tap.setup()
-        self.podStick = ps
+        center.playCommand.isEnabled = true
+        center.playCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.handleSingleTap()
+            }
+            return .success
+        }
+
+        center.pauseCommand.isEnabled = true
+        center.pauseCommand.addTarget { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.handleSingleTap()
+            }
+            return .success
+        }
+
+        UIApplication.shared.beginReceivingRemoteControlEvents()
     }
 
     private func setupVoiceInput() {
